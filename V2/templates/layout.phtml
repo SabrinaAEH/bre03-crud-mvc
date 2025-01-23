@@ -22,15 +22,7 @@
     <main>
        <?php
 			if (isset($route)) {
-				if ($route === "create_user") {
-					require 'templates/create.phtml';
-				} elseif ($route === "update_user") {
-					require 'templates/update.phtml';
-				} elseif ($route === "show_user") {
-					require 'templates/show.phtml';
-				} elseif ($route === "list") {
-					require 'templates/list.phtml';
-				} 
+				require "templates/users/$route.phtml";
 			}
 		?>
     </main>
