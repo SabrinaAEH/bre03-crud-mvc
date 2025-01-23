@@ -18,10 +18,10 @@ class UserController {
         
         $host = "db.3wa.io";
         $port = "3306";
-        $dbname = "sabrinaaitelhocine_crud_mvc";
+        $dbname = "#_crud_mvc";
         $connexionString = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8";
-        $user = "sabrinaaitelhocine";
-        $password = "42f72acb33228c477b94b94001bef4f6";
+        $user = "#";
+        $password = "#";
 
         $db = new PDO(
             $connexionString,
@@ -52,10 +52,10 @@ class UserController {
 
         $host = "db.3wa.io";
         $port = "3306";
-        $dbname = "sabrinaaitelhocine_crud_mvc";
+        $dbname = "#_crud_mvc";
         $connexionString = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8";
-        $user = "sabrinaaitelhocine";
-        $password = "42f72acb33228c477b94b94001bef4f6";
+        $user = "#";
+        $password = "#";
 
         $db = new PDO(
             $connexionString,
