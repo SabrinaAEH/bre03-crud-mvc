@@ -11,6 +11,7 @@ class UserController
     public function checkCreate(): void
     {
         $route = "check_create_user";
+        require "templates/layout.phtml";
     }
     
     public function update(): void

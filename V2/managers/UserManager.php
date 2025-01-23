@@ -2,8 +2,6 @@
 
 class UserManager extends AbstractManager
 {
-    private array $users = [];
-    
     public function __construct()
     {
         parent::__construct();
@@ -36,6 +34,18 @@ class UserManager extends AbstractManager
         }
 
         return $users;
+    }
+    
+    public function findOneById(int $id): ?User
+    {
+        $query = $this->db->prepare('SELECT * FROM users WHERE id = :id');
+        $query->execute(['id' => $id]);
+        $result = $query->fetch(PDO::FETCH_ASSOC);
+
+        $user = new User($result["first_name"], $result["last_name"], $result["email"]);
+        $user->setId($result["id"]);
+
+        return $user;
     }
     
     public function insert(User $user): void
