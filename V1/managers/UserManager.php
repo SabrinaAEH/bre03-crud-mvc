@@ -47,5 +47,14 @@ class UserManager {
 
         $user->setId($this->db->lastInsertId());
     }
+    
+   public function findAll(): array {
+        $stmt = $this->db->query("SELECT id, first_name, last_name, email FROM users");
+        $users = [];
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $users[] = new User($row['id'], $row['first_name'], $row['last_name'], $row['email']);
+        }
+        return $users;
+    }
 
 }

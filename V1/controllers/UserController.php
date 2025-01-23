@@ -49,7 +49,26 @@ class UserController {
     }
 
     public function list() {
-        echo "Listing users";
+
+        $host = "db.3wa.io";
+        $port = "3306";
+        $dbname = "sabrinaaitelhocine_crud_mvc";
+        $connexionString = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8";
+        $user = "sabrinaaitelhocine";
+        $password = "42f72acb33228c477b94b94001bef4f6";
+
+        $db = new PDO(
+            $connexionString,
+            $user,
+            $password);
+            
+        $userManager = new UserManager($db);
+
+        $users = $userManager->findAll();
+        
+        $templateList = './templates/users/list.phtml';
+
+        include 'templates/layout.phtml';
     }
 }
 

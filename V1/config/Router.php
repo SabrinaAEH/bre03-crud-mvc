@@ -1,5 +1,5 @@
 <?php
-require_once 'UserController.php';
+require_once './controllers/UserController.php';
 
 class Router {
     public function __construct() 
