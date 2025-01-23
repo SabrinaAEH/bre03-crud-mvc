@@ -12,15 +12,27 @@
         <nav>
             <ul>
                 <li><a href="./index.php">Accueil</a></li>
-                <li><a href="users/create.phtml">Créér un utilisateur</a></li>
-                <li><a href="users/update.phtml">Mettre à jour un utilisateur</a></li>
-                <li><a href="users/list.phtml">Liste des utilisateurs</a></li>
-                <li><a href="users/show.phtml">Voir un utilisateur</a></li>
+                <li><a href="index.php?route=users/create.phtml">Créér un utilisateur</a></li>
+                <li><a href="index.php?route=users/update.phtml">Mettre à jour un utilisateur</a></li>
+                <li><a href="index.php?route=users/list.phtml">Liste des utilisateurs</a></li>
+                <li><a href="index.php?route=users/show.phtml">Voir un utilisateur</a></li>
             </ul>
         </nav>
     </header>
     <main>
-       
+       <?php
+			if (isset($route)) {
+				if ($route === "create_user") {
+					require 'templates/create.phtml';
+				} elseif ($route === "update_user") {
+					require 'templates/update.phtml';
+				} elseif ($route === "show_user") {
+					require 'templates/show.phtml';
+				} elseif ($route === "list") {
+					require 'templates/list.phtml';
+				} 
+			}
+		?>
     </main>
     <script type="text/javascript" href="../assets/js/script.js">  </script>
 </body>

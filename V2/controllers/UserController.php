@@ -5,7 +5,7 @@ class UserController
     public function create(): void
     {
         $route = "create_user";
-        require "./templates/users/create.phtml";
+        require "templates/layout.phtml";
     }
     
     public function checkCreate(): void
@@ -16,29 +16,31 @@ class UserController
     public function update(): void
     {
         $route = "update_user";
-        require "./templates/users/update.phtml";
+        require "templates/layout.phtml";
     }
 
     public function checkUpdate(): void
     {
         $route = "check_update_user";
+        require "templates/layout.phtml";
     }
     
     public function show(): void
     {
         $route = "show_user";
-        require "./templates/users/show.phtml";
+        require "templates/layout.phtml";
     }
 
     public function delete(): void
     {
         $route = "delete_user";
+        require "templates/layout.phtml";
     }
     
     public function list(): void
     {
-        $route = "default"; // là j'ai un doute comme c'est le else de mon router, je ne sais pas quoi mettre ici
-        require "./templates/users/list.phtml";
+        $route = "list"; 
+        require "templates/layout.phtml";
     }
-
+    
 }
