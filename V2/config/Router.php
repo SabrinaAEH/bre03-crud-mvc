@@ -1,6 +1,6 @@
 
 <?php
-//require_once './controllers/UserController.php';
+require_once './controllers/UserController.php';
 
 class Router {
     public function __construct() 
@@ -12,19 +12,19 @@ class Router {
     {
         
         if (isset($get["route"]) && $get["route"] === "show_user") {
-            // $userController->show();
+            $userController->show();
         } elseif (isset($get["route"]) && $get["route"] === "create_user") {
-            // $userController->create();
+            $userController->create();
         } elseif (isset($get["route"]) && $get["route"] === "check_create_user") {
-            // $userController->checkCreate();
+            $userController->checkCreate();
         } elseif (isset($get["route"]) && $get["route"] === "update_user") {
-            // $userController->update();
+            $userController->update();
         } elseif (isset($get["route"]) && $get["route"] === "check_update_user") {
-            // $userController->checkUpdate();
+            $userController->checkUpdate();
         } elseif (isset($get["route"]) && $get["route"] === "delete_user") {
-            // $userController->delete();
+            $userController->delete();
         } else {
-            // $userController->list();
+            $userController->list();
         }
     }
 }
