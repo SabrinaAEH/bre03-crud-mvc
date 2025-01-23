@@ -44,7 +44,7 @@ class User {
         return $this->email;
     }
     
-    public function setEmail() : void 
+    public function setEmail(string $email) : void 
     {
         $this->email = $email;
     }
